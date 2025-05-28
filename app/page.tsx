@@ -2,6 +2,7 @@ import ServiceCard from "@/components/ServiceCard";
 import PortfolioCard from "@/components/PortfolioCard";
 import Image from "next/image";
 import { FaVideo, FaEdit, FaFilm, FaPalette } from "react-icons/fa";
+import { getImagePath } from "@/utils/imageLoader";
 
 export default function Home() {
   return (
@@ -9,7 +10,7 @@ export default function Home() {
       {/* Background Image */}
       <div className="fixed inset-0 -z-10">
         <Image
-          src="/images/bg.jpg"
+          src={getImagePath("/images/bg.jpg")}
           alt="Background"
           fill
           className="object-cover object-center"
@@ -61,7 +62,7 @@ export default function Home() {
             <ServiceCard
               title="Video Editing"
               description="Post-production and editing services"
-              imageUrl="/images/services/editing-icon.png"
+              imageUrl={getImagePath("/images/services/editing-icon.png")}
             />
             <ServiceCard title="Shoot" description="Capture the magic" />
             <ServiceCard title="Shoot" description="Capture the magic" />
@@ -81,17 +82,17 @@ export default function Home() {
             <PortfolioCard
               title="Cinematic Commercial"
               category="Video Production"
-              imageUrl="/images/portfolio-1.jpg"
+              imageUrl={getImagePath("/images/portfolio-1.jpg")}
             />
             <PortfolioCard
               title="Brand Story"
               category="Corporate Video"
-              imageUrl="/images/portfolio-2.jpg"
+              imageUrl={getImagePath("/images/portfolio-1.jpg")}
             />
             <PortfolioCard
               title="Music Video"
               category="Creative Direction"
-              imageUrl="/images/portfolio-3.jpg"
+              imageUrl={getImagePath("/images/portfolio-1.jpg")}
             />
             {/* Add more PortfolioCard components as needed */}
           </div>

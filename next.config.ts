@@ -1,13 +1,17 @@
 import type { NextConfig } from "next";
+import { IS_GITHUB_PAGES, BASE_PATH } from "./utils/constants";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   output: "export",
   images: {
     unoptimized: true,
   },
-  basePath: "/crystal-cinema-innovation",
-  assetPrefix: "/crystal-cinema-innovation/",
+  ...(IS_GITHUB_PAGES
+    ? {
+        basePath: BASE_PATH,
+        assetPrefix: `${BASE_PATH}/`,
+      }
+    : {}),
 };
 
 export default nextConfig;
