@@ -12,6 +12,11 @@ const nextConfig: NextConfig = {
         assetPrefix: `${BASE_PATH}/`,
       }
     : {}),
+  // Add this to ensure styles are processed
+  webpack: (config) => {
+    config.optimization.minimize = true;
+    return config;
+  },
 };
 
 export default nextConfig;
